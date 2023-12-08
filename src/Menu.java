@@ -141,12 +141,12 @@ public class Menu {
 					
 				}
 			}else {
-				System.out.println("No data found.");
+				System.out.println("Data not found.");
 			}
 			break; 
 			
 			default:
-				System.out.println("Eror.");
+				System.out.println("Error.");
 		}
 
 	
