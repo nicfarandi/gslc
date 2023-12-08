@@ -52,18 +52,17 @@ public class Menu {
 	}
 	
 	private void insertData(UserRepository ur, TeamRepository tr, Connection conn, Scanner sc){
-		System.out.println("Which table do you want to Insert?");
-		System.out.println("1. User, 2. Team");
+		System.out.println("Which table do you want to Insert? 1. User, 2. Team");
 		int pilihan= sc.nextInt();
 		sc.nextLine(); 
 		
 		switch(pilihan) {
 		case 1: 
-			System.out.println("add name:");
+			System.out.println("add name: ");
 			String name= sc.nextLine();
-			System.out.println("add nim:");
+			System.out.println("add nim: ");
 			String nim= sc.nextLine();
-			System.out.println("add team:");
+			System.out.println("add team: ");
 			String teamname= sc.nextLine();
 			
 			String[] data= {name, nim, teamname}; 
@@ -78,7 +77,7 @@ public class Menu {
 						if(u.getId() == i.getId()) {
 							countuser++; 
 						}if(countuser == 3) {
-							System.out.println("Team is Full.");
+							System.out.println("Error: Team Full.");
 							return;
 						}
 								
@@ -103,20 +102,18 @@ public class Menu {
 	}
 	
 	private void showData(UserRepository ur, TeamRepository tr, Connection conn, Scanner sc){
-		System.out.println("Which table to show?");
-		System.out.println("1. User, 2. Team");
+		System.out.println("Which table to show? 1. User, 2. Team.");
 		int choice = sc.nextInt();
 		sc.nextLine(); 
 		
-		System.out.println("Want to filter by condition?");
-		System.out.println("1.yes, 2.no");
+		System.out.println("Want to filter by condition? 1.yes, 2.no");
 		int filterchoice= sc.nextInt();
 		sc.nextLine();
 	 
 		
 		String[] kondisi= null; 
 		if(filterchoice == 1) {
-			System.out.println("Add condition, separate by semicolon");
+			System.out.println("add condition, separate by semicolon.");
 			String kondisiInput= sc.nextLine(); 
 			kondisi= kondisiInput.split(";");
 		}
